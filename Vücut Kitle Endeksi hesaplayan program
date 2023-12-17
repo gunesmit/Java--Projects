@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Vki {
+    public static void main(String[] args){
+        float boy,Vki,kilo;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Boyunuzu giriniz: ");
+        boy = input.nextFloat();
+
+        System.out.println("Kilonuzu giriniz: ");
+        kilo = input.nextFloat();
+
+        Vki = kilo/(boy*boy);
+
+        System.out.print("Vücut Kitle Endeksiniz: " + Vki);
+
+    }
+}
