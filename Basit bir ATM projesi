@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class Atmprojesi {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String kullanıcıAdı, şifre;
+        int hak = 0, işlem, bakiye = 1000, girdi, çekilenParaMiktarı, yatırılanParaMiktarı;
+
+        while (hak < 3) {
+            System.out.print("Kullanıcı Adınızı Giriniz: ");
+            kullanıcıAdı = input.nextLine();
+
+            System.out.print("Şifrenizi Giriniz: ");
+            şifre = input.nextLine();
+
+            if (kullanıcıAdı.equals("gunesmit") && şifre.equals("gunes")) {
+                System.out.print("Sun Bankasına Hoşgeldiniz");
+                do {
+                    System.out.print("Lütfen Yapmak İstediğiniz İşlemi Seçiniz:\n 1-Para yatırma\n 2-Para çekme\n " +
+                            "3-Bakiye sorgulama\n 4-Çıkış yap");
+
+                    girdi = input.nextInt();
+                    if (girdi == 1) {
+                        System.out.println("Lütfen yatırmak istediğiniz miktarı girin:\n ");
+                        yatırılanParaMiktarı = input.nextInt();
+
+                    } else if (girdi == 2) {
+                        System.out.println("Lütfen çekmek istediğiniz miktarı girin: ");
+                        çekilenParaMiktarı = input.nextInt();
+                        if(çekilenParaMiktarı<=bakiye)
+                            System.out.println("İşlem başarılı! ");
+
+                        else
+                            System.out.println("Yetersiz bakiye");
+
+                    } else if (girdi == 3) {
+                        System.out.println("Bakiyeniz: " + bakiye);
+
+                    }
+                }
+                while (girdi != 4);
+                break;
+            }
+            else{
+
+                System.out.print("Tekrar Deneyiniz \n");
+                hak++;
+            }
+            System.out.print("3'ten Fazla Deneme Yaptığınız İçin Hesabınız Bloke Olmuştur. Lütfen Banka ile İletişime Geçiniz.");
+
+
+
+        }
+    }
+}
