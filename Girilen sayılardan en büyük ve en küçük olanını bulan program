@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class JavaOdev_3 {
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+
+        int girilenSayı,N,max=0, min=0;
+
+        System.out.println("Bir N değeri giriniz: ");
+        N = input.nextInt();
+
+        System.out.println("Bir sayı giriniz: ");
+        girilenSayı = input.nextInt();
+        max = girilenSayı;
+        min = girilenSayı;
+
+        while(N>1) {
+
+            System.out.println("Bir sayı giriniz: ");
+            girilenSayı = input.nextInt();
+
+            if (girilenSayı > max)
+                max = girilenSayı;
+            else if (girilenSayı < min)
+                min = girilenSayı;
+
+            N -= 1;
+        }
+        System.out.println("En küçük sayı: " + min);
+        System.out.println("En büyük sayı: " + max);
+
+    }
+}
